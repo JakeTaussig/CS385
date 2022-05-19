@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/jaket/Desktop/Prototype 3.exe
+C:/Users/jaket/Desktop/SideScollerCS385/Prototype 3.exe
 SceneListBegin?
 Assets/Scenes/Sidescroller.unity
 SceneListEnd?

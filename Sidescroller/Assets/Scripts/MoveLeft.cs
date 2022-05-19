@@ -10,6 +10,7 @@ public class MoveLeft : MonoBehaviour
     private float leftBound = -10;
     void Start()
     {
+        speed = 10;
         playerControllerScript = GameObject.Find("Dog").GetComponent<DogController>();
     }
 

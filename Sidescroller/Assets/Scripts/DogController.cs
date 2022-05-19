@@ -12,9 +12,9 @@ public class DogController : MonoBehaviour
     public ParticleSystem dirtParticle;
     public AudioClip jumpSound;
     public AudioClip CrashSound;
-    public float jumpForce;
+    public float jumpForce = 700;
     public float speed = 0.5F;
-    public float gravityModifier;
+    public float gravityModifier = 1.5F;
     public bool isOnGround = true;
     public bool gameOver = false;
     // Start is called before the first frame update
@@ -24,6 +24,10 @@ public class DogController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
+        speed = 0.5F;
+        playerAnim.SetFloat("Speed_f", speed);
+        isOnGround = true;
+        gameOver = false;
     }
 
     // Update is called once per frame
@@ -44,8 +48,10 @@ public class DogController : MonoBehaviour
         }
         else {
             if(Input.GetKeyDown(KeyCode.R)) {
+                Physics.gravity = new Vector3(0.0F, -9.8F, 0.0F);
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
+                
             }
         }
     }

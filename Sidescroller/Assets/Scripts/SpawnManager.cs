@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        repeatRate = 4;
         StartCoroutine(SpawnObstacle());
         playerControllerScript = GameObject.Find("Dog").GetComponent<DogController>();
     }
